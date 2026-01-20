@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class UserInput {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Scanner ad = new Scanner(System.in);
+        // Scanner ad = new Scanner(System.in);
         int rollnum;
         float salary;
         double pi;
@@ -16,7 +16,8 @@ public class UserInput {
         System.out.println("Enter pi values");
         pi = sc.nextDouble();
         System.out.println("Enter the address: ");
-        address = ad.nextLine();
+        sc.nextLine(); // this is for buffer clearing
+        address = sc.nextLine();
         System.out.println("Enter the gender of and employee: ");
         gender = sc.next().charAt(0);
         System.out.println("Roll number is :" + rollnum);
