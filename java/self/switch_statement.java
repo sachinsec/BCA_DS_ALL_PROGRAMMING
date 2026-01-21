@@ -9,7 +9,15 @@ public class switch_statement {
             case 18:
                 System.out.println("Your age is 18");
                 break;
-
+            case 19:
+                System.out.println("Your age is " + age);
+                break;
+            case 20:
+                System.out.println("Your age is " + age);
+                break;
+            case 21:
+                System.out.println("Your age is " + age);
+                break;
             default:
                 System.out.println("Working..... next time , you will get desire ouput.");
                 break;
