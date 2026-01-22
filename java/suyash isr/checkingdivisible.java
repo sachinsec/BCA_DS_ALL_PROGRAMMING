@@ -6,7 +6,7 @@ public class checkingdivisible {
         Scanner sc = new Scanner(System.in);
         int a = sc.nextInt();
         if (a % 7 == 0) {
-            System.err.println("This is divisible by 7");
+            System.out.println("This is divisible by 7");
         } else {
             System.out.println("Not divisible.");
         }
