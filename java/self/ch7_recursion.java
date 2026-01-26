@@ -1,7 +1,7 @@
 public class ch7_recursion {
     int recu(int x) {
         if (x > 1) {
-            return * + recu(x - 1);
+            return x + recu(x - 1);
         }
         return 1;
     }
