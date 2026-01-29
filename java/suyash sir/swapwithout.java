@@ -8,8 +8,9 @@ public class swapwithout {
 
         System.out.println("Enter the value of b ");
         int b = sc.nextInt();
-        a = a + b - a;
-        b = a + b - b;
+        a = a + b;
+        b = a - b;
+        a = a - b;
         System.out.println("The value of a is " + a + " and value of b is " + b);
 
     }
