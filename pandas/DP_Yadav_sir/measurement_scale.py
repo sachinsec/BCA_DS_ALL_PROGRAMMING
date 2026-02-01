@@ -1,77 +1,60 @@
-{
-  "nbformat": 4,
-  "nbformat_minor": 0,
-  "metadata": {
-    "colab": {
-      "provenance": []
-    },
-    "kernelspec": {
-      "name": "python3",
-      "display_name": "Python 3"
-    },
-    "language_info": {
-      "name": "python"
+import pandas as pd
+from sklearn.preprocessing import OneHotEncoder, OrdinalEncoder, StandardScaler, MinMaxScaler
+
+
+def build_measurement_scale_df() -> pd.DataFrame:
+    """Create and return a DataFrame demonstrating common measurement scales
+
+    - Nominal: `Nominal_Color` (one-hot encoded)
+    - Ordinal: `Ordinal_Rating` (ordinal encoded)
+    - Interval: `Interval_Temp` (standard scaled)
+    - Ratio: `Ratio_Income` (min-max scaled)
+    """
+
+    data = {
+        'Nominal_Color': ['Red', 'Blue', 'Green'],  # Nominal (Categorical)
+        'Ordinal_Rating': ['Low', 'Medium', 'High'],  # Ordinal (Ranked)
+        'Interval_Temp': [22.5, 18.0, 25.4],  # Interval (Numerical, No True Zero)
+        'Ratio_Income': [50000, 120000, 75000],  # Ratio (Numerical, True Zero)
     }
-  },
-  "cells": [
-    {
-      "cell_type": "code",
-      "execution_count": null,
-      "metadata": {
-        "colab": {
-          "base_uri": "https://localhost:8080/"
-        },
-        "id": "18eQT1391Ufi",
-        "outputId": "5124e2dd-abe8-430f-b673-eb92699068a9"
-      },
-      "outputs": [
-        {
-          "output_type": "stream",
-          "name": "stdout",
-          "text": [
-            "   Ordinal_Encoded  Temp_Scaled  Income_Scaled\n",
-            "0              0.0     0.175180       0.000000\n",
-            "1              1.0    -1.302902       1.000000\n",
-            "2              2.0     1.127722       0.357143\n"
-          ]
-        }
-      ],
-      "source": [
-        "import pandas as pd\n",
-        "from sklearn.preprocessing import OneHotEncoder, OrdinalEncoder, StandardScaler, MinMaxScaler\n",
-        "\n",
-        "# 1. Create a dataset representing various measurement scales\n",
-        "data = {\n",
-        "    'Nominal_Color': ['Red', 'Blue', 'Green'], # Nominal (Categorical)\n",
-        "    'Ordinal_Rating': ['Low', 'Medium','High'], # Ordinal (Ranked)\n",
-        "    'Interval_Temp': [22.5, 18.0, 25.4],      # Interval (Numerical, No True Zero)\n",
-        "    'Ratio_Income': [50000, 120000, 75000]   # Ratio (Numerical, True Zero)\n",
-        "}\n",
-        "df = pd.DataFrame(data)\n",
-        "\n",
-        "# 2. Process Nominal Data (One-Hot Encoding)\n",
-        "# Ensures no false numerical hierarchy is assigned to colors.\n",
-        "ohe = OneHotEncoder(sparse_output=False)\n",
-        "nominal_encoded = ohe.fit_transform(df[['Nominal_Color']])\n",
-        "\n",
-        "# 3. Process Ordinal Data (Ordinal Encoding)\n",
-        "# Preserves the rank: Low (0) < Medium (1) < High (2)\n",
-        "rank_order = [['Low', 'Medium', 'High']]\n",
-        "oe = OrdinalEncoder(categories=rank_order)\n",
-        "df['Ordinal_Encoded'] = oe.fit_transform(df[['Ordinal_Rating']])\n",
-        "\n",
-        "# 4. Process Interval Data (Standardization)\n",
-        "# Good for models sensitive to variance (e.g., SVM, KNN).\n",
-        "ss = StandardScaler()\n",
-        "df['Temp_Scaled'] = ss.fit_transform(df[['Interval_Temp']])\n",
-        "\n",
-        "# 5. Process Ratio Data (Min-Max Scaling)\n",
-        "# Compresses income into a 0-1 range while maintaining ratio properties.\n",
-        "mms = MinMaxScaler()\n",
-        "df['Income_Scaled'] = mms.fit_transform(df[['Ratio_Income']])\n",
-        "\n",
-        "print(df[['Ordinal_Encoded', 'Temp_Scaled', 'Income_Scaled']])\n"
-      ]
-    }
-  ]
-}
+
+    df = pd.DataFrame(data)
+
+    # 1) Nominal (One-Hot)
+    # Handle sklearn API differences (`sparse` vs `sparse_output`) and feature-name methods.
+    try:
+        ohe = OneHotEncoder(sparse=False, dtype=float)
+    except TypeError:
+        ohe = OneHotEncoder(sparse_output=False, dtype=float)
+
+    nominal_encoded = ohe.fit_transform(df[['Nominal_Color']])
+    try:
+        nominal_cols = ohe.get_feature_names_out(['Nominal_Color'])
+    except AttributeError:
+        nominal_cols = ohe.get_feature_names(['Nominal_Color'])
+    df[nominal_cols] = nominal_encoded
+
+    # 2) Ordinal
+    rank_order = [['Low', 'Medium', 'High']]
+    oe = OrdinalEncoder(categories=rank_order, dtype=float)
+    df['Ordinal_Encoded'] = oe.fit_transform(df[['Ordinal_Rating']]).ravel()
+
+    # 3) Interval (Standardization)
+    ss = StandardScaler()
+    df['Temp_Scaled'] = ss.fit_transform(df[['Interval_Temp']]).ravel()
+
+    # 4) Ratio (Min-Max Scaling)
+    mms = MinMaxScaler()
+    df['Income_Scaled'] = mms.fit_transform(df[['Ratio_Income']]).ravel()
+
+    return df
+
+
+def main() -> None:
+    df = build_measurement_scale_df()
+    # display key transformed columns
+    print(df[['Ordinal_Encoded', 'Temp_Scaled', 'Income_Scaled']])
+
+
+if __name__ == '__main__':
+    main()
