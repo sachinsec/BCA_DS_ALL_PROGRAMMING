@@ -74,3 +74,10 @@ for fold, (train_idx, test_idx) in enumerate(skf.split(X, y), 1):
           np.bincount(y[train_idx]),
           np.bincount(y[test_idx]))
 
+# svm use
+from sklearn.svm import SVC
+model=SVC(random_state=42)
+
+model.fit(X_train,y_train)
+
+pre=model.predict(y_test,y)
