@@ -10,8 +10,8 @@ if (am>10000)
 }
 else
 {
-    float dis=(am*5)/100;   
-    printf("bill prize = %f ",am-dis);
+    float disc=(am*5)/100;   
+    printf("bill prize = %f ",am-disc);
 }
 
 
