@@ -20,11 +20,13 @@ class Employee {
 
 }
 
-public class ch8_prectice {
+public class ch9_encapsulation {
     public static void main(String[] args) {
         Employee obj = new Employee();
         obj.setname("Sachin");
         obj.setsalary(900000);
+        // obj.name="Sachin"; we cann't use this in ecapsulation. we use setter and
+        // getter for accessing
         System.out.println(obj.getname() + "\n" + obj.getsalary());
 
     }
