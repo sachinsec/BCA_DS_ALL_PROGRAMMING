@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "fibonacci",
+            "request": "launch",
+            "mainClass": "fibonacci",
+            "projectName": "Arunsir_e239db64"
+        },
+        {
+            "type": "java",
+            "name": "ContinuePro",
+            "request": "launch",
+            "mainClass": "ContinuePro",
+            "projectName": "Arunsir_e239db64"
+        },
+        {
+            "type": "java",
             "name": "assignment_grade",
             "request": "launch",
             "mainClass": "assignment_grade",
