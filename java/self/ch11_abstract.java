@@ -1,4 +1,5 @@
 abstract class parent{
+    int a =34;
     public void parent(){
         System.out.println("I'm a constractor of base");
     }
@@ -28,6 +29,8 @@ public class ch11_abstract {
         c1.greet();
         c.sayHello();
         //child1 c1 = new child1();
+        c.a=45;
+        System.out.println(c.a);
 
     }
 }
