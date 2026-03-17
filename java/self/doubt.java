@@ -1,51 +1,59 @@
-import java.util.Scanner;
-class roman{
-    int i=1,v=5,x=10,l=50,c=100,d=500,m=1000;
-    int result=0,check=0;
-    String n;
-    public String get(String s){
-     return n=s.toLowerCase();
+class Roman_number{
+int i=1,v=5,x=10,l=50,c=100,d=500,m=1000;
+String s="ii",t;char n;
+int result=0,curr=0,next;
 
-    }
-    public int right(){
-        for(int j =0;j< n.length();j++){
-       if (n.charAt(j)=='m') {
-           check = m;
-       }
-       else if (n.charAt(j)=='d'){
-           check = d;
-       }
-       else if (n.charAt(j)=='c'){
-           check = c;
-       }
-       else if (n.charAt(j)=='l'){
-           check = l;
-       }
-       else if (n.charAt(j)=='x'){
-           check = x;
-       }
-       else if (n.charAt(j)=='v'){
-           check = v;
-       }
-       else if (n.charAt(j)=='i'){
-           check = i;
-       }
-      result += check;
+public void initialize(){
+    s=t.toLowerCase();
+}
+
+public int calculate_num(){
+    Roman_number obj=new Roman_number();
+
+    for(int j=0;j<s.length();j++){
+   curr = obj.To_check(s.charAt(j));
+   next = obj.To_check(s.charAt(j+1));
+
+   if (curr>next) {
+    result -= curr;
    }
-   return result;
-    }
-} 
+   else{
+    result += curr;
+   }}
+
+    return result;
+}
+
+public int To_check(char n){
+char r=n;
+   switch (r) {
+    case 'm':
+        return m;
+    case 'd':
+        return d;
+    case 'c':
+        return c;
+    case 'l':
+        return l;
+    case 'x':
+        return x;
+    case 'v':
+        return v;
+    case 'i':
+        return i;
+    default:
+        return 0;
+   }
+}
+
+}
 
 
-public class doubt{
-    public static void main(final String[] args) {
+public class doubt {
+
+    public static void main(String[] args) {
+        Roman_number obj= new Roman_number();
+        obj.calculate_num();
         
-        String s="MCMXCIV";
-
-        roman obj=new roman();
-        obj.get(s);
-
-    System.out.println(obj.right());
-
     }
 }
