@@ -24,7 +24,11 @@ public class array {
             sum[i] = java[i]+dbms[i]+state[i];
         }
         for(int i=0;i<java.length;i++){
-            System.out.println("Sum of student: "+(i+1)+" = "+sum[i]);
+            System.out.println("Student: "+(i+1));
+            System.out.println("JAVA: "+java[i]);
+            System.out.println("DBMS: "+dbms[i]);
+            System.out.println("STATISTIC: "+state[i]);
+            System.out.println("Total: "+(i+1)+" = "+sum[i]);
         }
     }
 }
