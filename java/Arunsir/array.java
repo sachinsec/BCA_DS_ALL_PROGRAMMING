@@ -1,10 +1,10 @@
 import java.util.Scanner;
 public class array {
     public static void main(String[] args) {
-        int java[]=new int[10];
-        int dbms[]=new int[10];
-        int state[]=new int[10];
-        int sum[] = new int[10];
+        int java[]=new int[5];
+        int dbms[]=new int[5];
+        int state[]=new int[5];
+        int sum[] = new int[5];
 
         Scanner sc = new Scanner(System.in);
         
