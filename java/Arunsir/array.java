@@ -1,12 +1,13 @@
 import java.util.Scanner;
 public class array {
     public static void main(String[] args) {
-        int java[]=new int[5];
-        int dbms[]=new int[5];
-        int state[]=new int[5];
-        int sum[] = new int[5];
-
         Scanner sc = new Scanner(System.in);
+        System.out.println("How many studnet");
+        int size=sc.nextInt();
+        int java[]=new int[size];
+        int dbms[]=new int[size];
+        int state[]=new int[size];
+        int sum[] = new int[size];
         
         for(int i=0;i<java.length;i++){
           System.out.println("Enter java marks of Student: "+(i+1));
@@ -23,6 +24,7 @@ public class array {
         for (int i = 0;i<java.length;i++) {
             sum[i] = java[i]+dbms[i]+state[i];
         }
+        System.out.println("Result of all Student:");
         System.out.println("STUDENT   JAVA  DBMS  STATE TOTAL");
         for(int i=0;i<java.length;i++){
             
