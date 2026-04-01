@@ -23,7 +23,7 @@ public class ch11_interface {
         // You can create properties in interface
         obj.speedup(0);
         // You can't modify properties in interface
-        obj.a =45;
+       // obj.a =45;
         System.out.println(obj.a);
     }
 }
