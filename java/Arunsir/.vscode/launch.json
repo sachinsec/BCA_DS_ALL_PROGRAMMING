@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "StringExam",
+            "request": "launch",
+            "mainClass": "StringExam",
+            "projectName": "Arunsir_4808db1b"
+        },
+        {
+            "type": "java",
+            "name": "Demodisplays",
+            "request": "launch",
+            "mainClass": "Demodisplays",
+            "projectName": "Arunsir_4808db1b"
+        },
+        {
+            "type": "java",
             "name": "fibonacci",
             "request": "launch",
             "mainClass": "fibonacci",
