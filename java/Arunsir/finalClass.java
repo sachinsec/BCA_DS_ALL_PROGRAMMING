@@ -7,6 +7,7 @@ public Finala(int n){
 }
 final void calculate(){
     num2=num2+10;
+  //  num= num+10; // because this is final
 }
 final void getdata(){
 
@@ -41,6 +42,6 @@ public class finalClass {
 
         Finala obj = new Finala(2);
        // obj.num=2;  we can't change because this is final
-       
+
     }
 }
