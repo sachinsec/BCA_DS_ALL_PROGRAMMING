@@ -1,15 +1,36 @@
-import java.util.Scanner;
-
+class printing extends Thread{
+public void run(){
+    while (true) {
+        
+    System.out.println("Printing.....");
+    }
+}
+}
+class typing extends Thread{
+public void run(){
+     while (true) {
+            System.out.println("Typing.....");
+        }
+}
+}
+class music extends Thread{
+    public void run(){
+        while (true) {
+            System.out.println("Playing music");
+        }
+        
+    }
+}
 public class practice2 {
+
     public static void main(String[] args) {
-        String na;
-        Scanner sc=new Scanner(System.in);
-        na=sc.nextLine();
-        int co=0;
-        for(int i = 0;i<na.length();i++){
-           if (na.charAt(i)==' ') {
-            co++;
-           }
-        }  
-        System.out.println("White space = "+co);      
-    }}
+        Thread obj = new typing();
+        Thread obj1 = new music();
+        Thread obj2 = new printing();
+        obj.start();
+        obj1.start();
+        obj2.start();
+       
+    }
+
+}
