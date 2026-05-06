@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ch13_threads_constractor",
+            "request": "launch",
+            "mainClass": "ch13_threads_constractor",
+            "projectName": "self_c2432ac3"
+        },
+        {
+            "type": "java",
             "name": "prectice12",
             "request": "launch",
             "mainClass": "prectice12",
