@@ -159,3 +159,142 @@
 
 
 #Q14
+#1
+# for i in range(1,6):
+#     print("* "*5)
+# print()
+
+# #4
+# for i in range(1,6):
+#     print("* "*9)
+# print()
+
+# #2
+# for i in range(1,6):
+#     print("* "*i)
+# print()
+
+# #3
+# for i in range(5,0,-1):
+#     print("* "*i)
+# print()
+
+
+# #5
+# for i in range(1,5):
+#     print("* "*i)
+# for i in range(5,0,-1):
+#     print("* "*i)
+# print()
+
+# #6
+# n = 4
+# for i in range(1,5):
+#     print(" "*n,end="")
+#     n -= 1
+#     print("*"*i)
+# for i in range(5,0,-1):
+#     print(" "*n,end="")
+#     n += 1
+#     print("*"*i)
+# print()
+
+# #7
+# n = 4
+# for i in range(1,5):
+#     print(" "*n,end="")
+#     n -= 1
+#     print("* "*i)
+# for i in range(5,0,-1):
+#     print(" "*n,end="")
+#     n += 1
+#     print("* "*i)
+# print()
+
+
+# #8
+# n = 0
+# for i in range(5,0,-1):
+#     print(" "*n,end="")
+#     n += 1
+#     print("* "*i)
+# for i in range(1,6):
+#     n -= 1
+#     print(" "*n,end="")
+#     print("* "*i)
+# print()
+
+# #9
+# for i in range(1,6):
+#     for j in range(1,6):
+#         if((i==1 and (j==1 or j>3))or j==3 or i==3 or(i==5 and (j<3 or j==5)) or (i==4 and j==5) or (i==2 and j==1)):
+#             print("*",end=" ")
+#         else:
+#             print(" ",end=" ")
+#     print()
+
+# #10
+# b=10
+# c=0
+
+# for a in range(1,6):
+#         print("*"*a,end="")
+#         print(" "*b,end="")
+#         b =b-2
+#         print("*"*a)
+
+# for i in range(6,0,-1):
+#         print("*"*i,end="")
+#         print(" "*c,end="")
+#         c =c+2
+#         print("*"*i)
+
+#11
+# c=0
+# for i in range(6,0,-1):
+#         print("*"*i,end="")
+#         print(" "*c,end="")
+#         c =c+2
+#         print("*"*i)
+
+# #12
+# b= 10
+# for a in range(1,6):
+#         print("*"*a,end="")
+#         print(" "*b,end="")
+#         b =b-2
+#         print("*"*a)
+
+
+# #13
+# c=0
+# for i in range(6,0,-1):
+#         print("*"*i,end="")
+#         print(" "*c,end="")
+#         c =c+2
+#         print("*"*i)
+
+# b= 8
+# for a in range(2,7):
+#         print("*"*a,end="")
+#         print(" "*b,end="")
+#         b =b-2
+#         print("*"*a)
+
+
+# #14
+# for i in range(1,6):
+#     for j in range(1,6):
+#         if(i==1 or i == 5):
+#             print("*",end=" ")
+#         elif(j==1 or j== 5):
+#             print("*",end=" ")
+#         else:
+#             print(" ",end=" ")
+#     print()
+
+#15
+n = 5
+for i in range(1, n + 1):
+    print(" " * (n - i),end="")
+    print("*"*5)
