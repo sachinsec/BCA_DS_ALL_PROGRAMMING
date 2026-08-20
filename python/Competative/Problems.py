@@ -212,7 +212,7 @@
 # print()
 
 
-# #8
+# # #8
 # n = 0
 # for i in range(5,0,-1):
 #     print(" "*n,end="")
@@ -293,8 +293,31 @@
 #             print(" ",end=" ")
 #     print()
 
-#15
-n = 5
-for i in range(1, n + 1):
-    print(" " * (n - i),end="")
-    print("*"*5)
+# #15
+# n = 5
+# for i in range(1, n + 1):
+#     print(" " * (n - i),end="")
+#     print("*"*5)
+
+
+# #16
+# for i in range(1, 6):
+#     for j in range(1, i + 1):
+#         print(j, end=" ")
+#     print()
+
+
+# #17
+# for i in range(1, 6):
+#     for j in range(1, i + 1):
+#         print(i, end=" ")
+#     print()
+
+
+# #18
+# num = 1
+# for i in range(1, 5):
+#     for j in range(1, i + 1):
+#         print(num, end=" ")
+#         num += 1
+#     print()
