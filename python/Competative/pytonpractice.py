@@ -1,3 +1,7 @@
-list = [500, 2000, 15000, 8000, 25000, 1000]
+n = "aeiou"
+count = 0
 
-print(list)
+for i in range(0,len(n)):
+    if(n[i] in 'aeiou'):
+        count += 1
+print(count)

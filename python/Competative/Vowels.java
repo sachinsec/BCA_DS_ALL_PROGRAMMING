@@ -13,12 +13,13 @@ public class Vowels {
     
     static void count(String w){
         w.toLowerCase();
-
+        int count = 0;
         for (int i = 0; i < w.length(); i++) {
-
-            if (charAt(w[i])=='a' && w[i]=='e' ) {
-                
+            char ch = w.charAt(i);
+            if (ch=='a' || ch=='e' || ch =='i' || ch =='o' || ch == 'u') {
+                count++;
             }
         }
+        System.out.println(count);
     }
 }
