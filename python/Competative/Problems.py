@@ -68,15 +68,15 @@
 
 
 #Q7
-# n = int(input("Enter number: "))
-# b = 1
-# a,s = 0,0
+n = int(input("Enter number: "))
+b = 1
+a,s = 0,0
 
-# for i in range(0,n):
-#     print(s,end=" ")
-#     a = b
-#     b = s
-#     s = a+b
+for i in range(0,n):
+    print(s,end=" ")
+    a = b
+    b = s
+    s = a+b
 
 #Q8
 # n = int(input("Enter number: "))
