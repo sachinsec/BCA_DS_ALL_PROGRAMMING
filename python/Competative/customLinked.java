@@ -94,19 +94,6 @@ public class customLinked {
         list.addAttail(20);
         list.addAttail(30);
         list.addAttail(40);
-        list.addAttail(40);
-        list.addAttail(40);
-        list.addAttail(40);
-        list.addAttail(40);
-        list.addAttail(40);
-        list.addAttail(40);
-        list.addAttail(40);
-        list.addAttail(40);
-        list.addAttail(40);
-        list.addAttail(40);
-        list.addAttail(40);
-        list.addAttail(40);
-        list.addAttail(40);
         
         list.insertindx(50,1);
         

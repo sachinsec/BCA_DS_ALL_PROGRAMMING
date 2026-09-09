@@ -5,6 +5,7 @@ while cond:
     print("2. Pop")
     print("3. Peek")
     print("4. Exit")
+    print("5. Display")
     
     op = int(input("Enter Option:  "))
     
@@ -20,11 +21,17 @@ while cond:
         if(len(stack)==0):
             print("Stack is Underflow.")
         else:
-            print(stack.pop())
+            print(stack.pop(0))
             print("Removed succesfully")
     
     elif(op == 3):
-        print(stack[len(stack)-1])
+        if(len(stack)==0):
+            print("Stack is empty")
+        else:
+            print(stack[-1])
 
     elif(op == 4):
         cond = False
+
+    elif(op == 5):
+        print(stack[::-1])
