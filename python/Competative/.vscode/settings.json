@@ -1,0 +1,4 @@
+{
+    "java.jdt.ls.vmargs": "-Xmx16G -XX:+UseG1GC -XX:+UseStringDeduplication",
+    "java.debug.settings.onBuildFailureProceed": true
+}
